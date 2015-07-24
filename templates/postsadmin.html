@@ -1,0 +1,30 @@
+$def with(user,posts)
+
+$var title: Posts - $user["username"]
+<a href="/admin/">Administration</a>
+<h1>Administrate your posts. <a href="new">+New</a></h1> 
+
+$if len(posts) > 0:
+	$for post in posts:
+		<ul>
+			<li>
+				<div class="postlist">
+					<h3 style="font-size:11pt;font-weight:400"> 
+					<a href="view/$post['title_id']">$post['title']</a> 
+					<a style="float:right;margin:4px;color:#00CC00" href="edit/$post['title_id']">Edit</a>
+					<a style="float:right;margin:4px;color:#FF0000;" href="delete/$post['title_id']">Delete</a><br/>
+					Created:&ensp;$post['create_time'] <em style="color:#0000FF">&#8226;</em> Updated:&ensp;$post['update_time']
+					<em style="color:#0000FF">&#8226;</em> Status: 
+					$if post['type'] == 0:
+						Private
+					$else:
+						Public
+					</h3>
+				</div>
+			</li>
+		</ul> 
+$else:
+	<p>There is not post yet.</p>
+
+
+

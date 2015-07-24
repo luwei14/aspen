@@ -1,0 +1,32 @@
+$def with(user,recentPosts)
+
+$var title: $user['realname'].upper()
+
+	<h1>
+		<a href=/>$user['realname'].upper()</a>
+    </h1>
+    <section style="text-align:justify;text-justify:distribute-all-lines;">
+		$:user['profile']
+    </section>
+	<section>
+		<header>
+	        <h1>Latest Post Entries</h1>
+        </header>
+	
+		$if len(recentPosts) > 0:
+			$for post in recentPosts:
+				<ol>
+					<li>
+						$post['update_time']<br/>
+						<a href="/post/$post['title_id']">$post['title']</a> 
+					</li>
+				</ol> 
+		$else:
+			<p>There is no post yet.</p>
+	<p>
+        <a href=/archives>
+          <em>For all post entries</em>
+        </a>
+    <p>
+	</section>
+	

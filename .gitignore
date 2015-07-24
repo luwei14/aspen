@@ -1,0 +1,5 @@
+*.pyc
+*~
+TODO.MD
+sessions/*.*
+static/upload/*.*

@@ -1,0 +1,33 @@
+$def with(allPosts,user,tags,categories)
+
+$var title: Post Archives of $user.upper()
+	<h1>
+		<a href=/>$user.upper()</a>
+    </h1>
+	<section class=entries>
+      <header>
+        
+      </header>
+
+	<h2>Categories:</h2>
+	$if len(categories) > 0:
+		$for cate in categories:
+			&#8226; <a href="/category/$cate['id']">$cate['name'] ($cate['frequency']) &emsp;</a>
+<!--	<h2>Tags:</h2>
+	$if len(tags) > 0:
+		$for tag in tags:
+			&#8226; <a href="/tag/$tag['id']">$tag['name'] ($tag['frequency']) &emsp;</a>
+	<h1>All Post Entries</h1>-->
+	<!--
+	<i>Some posts may be taged as private.</i>-->
+	$if len(allPosts) > 0:
+		$for post in allPosts:
+			<ol>
+			<li>
+			$post['update_time']<br/>
+			<a href="/post/$post['title_id']">$post['title']</a> 
+			</li>
+			</ol> 
+	$else:
+		<p>There is no post yet.</p>
+	</section>

@@ -1,0 +1,76 @@
+$def with(user,msg)
+
+$var title: Profile - $user["username"]
+
+<a href="/admin/">Administration</a>
+<p>$msg<p>
+<div>
+<form method="POST" action='userinfo'>
+		<span>
+		<label style="width:70%;text-align:left;"><h1>Edit Your Personal Information</h1></label>
+		<button type="submit">Save</button>
+		</span>
+		<div class="personalinfoitem">
+		<label for="username">User Name:</label>
+		<input type="text" name="username" value="$user['username']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="realname">Real Name:</label>
+		<input type="text" name="realname" value="$user['realname']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="title">Title:</label>
+		<input type="text" name="title" value="$user['title']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="dept">Department:</label>
+		<input type="text" name="dept" value="$user['dept']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="dept_l">Dept. Site:</label>
+		<input type="text" name="dept_l" value="$user['dept_l']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="comp">Company:</label>
+		<input type="text" name="comp" value="$user['comp']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="comp_l">Comp. Site:</label>
+		<input type="text" name="comp_l" value="$user['comp_l']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="addr1">Address L1:</label>
+		<input type="text" name="addr1" value="$user['addr1']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="addr2">Address L2:</label>
+		<input type="text" name="addr2" value="$user['addr2']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="zip">Zip Code:</label>
+		<input type="text" name="zip" value="$user['zip']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="tel">Phone:</label>
+		<input type="text" name="tel" value="$user['tel']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="email">E-Mail:</label>
+		<input type="text" name="email" value="$user['email']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="wgs_lon">Longitude:</label>
+		<input type="text" name="wgs_lon" value="$user['wgs_lon']"></input>
+		</div>
+		<div class="personalinfoitem">
+		<label for="wgs_lat">Latitude:</label>
+		<input type="text" name="wgs_lat" value="$user['wgs_lat']"></input>
+		</div>
+		<div class="personalinfoitem">
+			<label for="profile">Profile:</label>
+			<textarea rows="15" cols="47" name="profile" style="vertical-align: text-top;">$user['profile']</textarea>
+		</div>
+		
+</form>
+
+</div>

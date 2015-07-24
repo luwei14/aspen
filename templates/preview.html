@@ -1,0 +1,11 @@
+$def with(post)
+
+$var title: $post['title']
+	<a href="/admin/postsadmin">Post List</a>
+	<header>
+        <h1>$post['title'] &emsp;<a href="/admin/edit/$post['title_id']">Edit</a></h1>
+    </header>
+    <article style="text-align:justify;text-justify:distribute-all-lines;">
+      
+		$:post['content']
+	</article>

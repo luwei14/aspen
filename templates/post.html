@@ -1,0 +1,19 @@
+$def with(post, author)
+
+$var title: $post['title']
+
+	<h1>
+		<a href=/>$author.upper()</a>
+    </h1>
+	<header>
+        <h1>$post['title']</h1>
+		
+        <p class="byline">
+          An entry at <strong>$post['update_time']</strong> in
+          the <a href=/archives>Posts</a>.
+        </p>
+      </header>
+    <article style="text-align:justify;text-justify:distribute-all-lines;">
+      
+		$:post['content']
+	</article>

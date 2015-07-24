@@ -1,0 +1,24 @@
+$def with(allPosts,user)
+
+$var title: Post Archives of $user.upper() by Category- $allPosts['category']
+	<h1>
+		<a href=/>$user.upper()</a>
+    </h1>
+	<section class=entries>
+      <header>
+        <h1><a href='/archives'>Post Entries</a> by Category:$allPosts['category']</h1>
+		<!--
+	<i>Some posts may be taged as private.</i>-->
+      </header>
+	
+	$if len(allPosts) > 0:
+		$for post in allPosts['posts']:
+			<ol>
+			<li>
+			$post['update_time']<br/>
+			<a href="/post/$post['title_id']">$post['title']</a> 
+			</li>
+			</ol> 
+	$else:
+		<p>There is not post yet.</p>
+	</section>

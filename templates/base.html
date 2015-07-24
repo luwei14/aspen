@@ -1,0 +1,23 @@
+$def with (content)
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="/static/font-awesome.css"/>-->
+		<title> $content.title </title>	
+		<!--//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-->
+		<script type="text/javascript"
+ 			 src="/static/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	</head>
+	<body>
+		$:content
+
+	<footer>
+      Powered by <a href="https://github.com/luwei14/aspen">Github:aspen</a>.
+    </footer>
+	</body>
+</html>

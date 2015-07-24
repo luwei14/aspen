@@ -1,0 +1,14 @@
+$def with(msg)
+
+$var title: Upload File
+<a href="/admin/">Administration</a>
+
+$if msg is not None:
+	<h3> $msg <h3>
+
+<h1>Select the file.</h1>
+<p>Name your file, and quote it like: <i>/static/upload/filename.png</i></p>
+<form method="POST" enctype="multipart/form-data" action="upload">
+	<input type="file" name="infile" />
+	<input type="submit" />
+</form>

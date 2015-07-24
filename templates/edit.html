@@ -1,0 +1,58 @@
+$def with(user,post,msg)
+
+$if msg is not None:
+	<h3> $msg </h3>
+
+<script language="javascript">  
+function countChar()
+{  
+	str = document.getElementById("textarea").value
+	var r= new RegExp(
+  	  '[A-Za-z0-9_-\]+|'+                             // ASCII letters (no accents)
+ 	  '[\u4E00-\u9FFF\uF900-\uFAFF\u3400-\u4DBF]',   // Single CJK ideographs
+	  'g');
+	if (str){
+		var nwords= str.match(r).length;
+		document.getElementById("wordcount").innerHTML = nwords
+	}
+	else
+		{
+			document.getElementById("wordcount").innerHTML = 0;
+			document.getElementById("textarea").innerHTML="%title_id:\n%tags:\n%category:\n%type:1";
+		}
+}  
+
+</script>
+$if post is None:
+	$var title: Edit - New
+	<a href="/admin/postsadmin">Post List</a>
+	<form method="POST" action="/admin/new">
+	<span>
+		<label style="width:70%;text-align:left;"><h1>New Post.</h1></label>
+		<button type="submit">Save</button><br>
+	</span>
+	<input style="width:100%" type="text" name="title" placeholder="Title"/><br/>
+	<textarea id="textarea" oninput="countChar();" onfocus="countChar();" name="content" rows="30" placeholder="Content Here" style="vertical-align:text-top;margin:1px;width:100%"></textarea>
+	Words:<span id="wordcount">0</span>
+	</form>
+$else: 
+	$var title: Edit - $post['title']
+
+	<a href="/admin/postsadmin">Post List</a>
+	
+	<form method="POST" action="/admin/edit/$post['title_id']">
+	<span>
+		<label style="width:70%;text-align:left;"><h1>Edit Post. &emsp;
+		<a href="/admin/view/$post['title_id']">Preview</a></h1>
+		</label>
+		<button type="submit">Save</button>
+	</span>
+	
+	<input style="width:100%" type="text" name="title" value="$post['title']"/>
+	
+	<textarea id="textarea" oninput="countChar();" onfocus="countChar();" name="content" rows="30" style="vertical-align:text-top;;margin:1px;width:100%">$post['content']</textarea>
+	Words:<span id="wordcount">0</span>
+	</form>
+
+
+

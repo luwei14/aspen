@@ -1,0 +1,26 @@
+$def with(msg)
+
+$if msg is not None:
+	<p><em>$msg</em></p>
+
+$var title: New Password
+
+<a href="/admin/">Administration</a>
+<h1>New Password.</h1>
+<form method="POST" action='newpwd'>
+	<table >
+		<tr>
+			<td align="center">New Password:</td>
+			<td align="center"><input style="width:auto" type="password" name="pwd1" placeholder="New password."></td>
+		</tr>
+		<tr>
+			<td align="center">Input Again:</td>
+			<td align="center"><input style="width:auto" type="password" name="pwd2" placeholder="New password, again."></td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td align="center"><button type="submit" style="padding: 5px 68px;">Submit</button></td>
+		</tr>
+		
+	</table>
+	</form>

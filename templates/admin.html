@@ -1,0 +1,30 @@
+$def with(auth)
+
+$if auth["error"] > 0:
+	$var title: Login
+	<form method="POST" action='/admin/'>
+	&emsp;<h1>$auth["msg"]</h1>
+
+	<table >
+		<tr>
+			<td align="center">Username:</td>
+			<td align="center"><input style="width:auto" type="text" name="name" placeholder="Input your name"></td>
+		</tr>
+		<tr>
+			<td align="center">Password:</td>
+			<td align="center"><input style="width:auto" type="password" name="pwd" placeholder="Password"></td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td align="center"><button type="submit" style="padding: 5px 68px;">Submit</button></td>
+		</tr>
+		
+	</table>
+	</form>
+$else:
+	$var title: Admin- $auth["value"]["username"]
+	<h1>Hi, <a href="/">$auth["value"]["realname"]</a></h1>
+	<p><a href="userinfo">Edit Profile</a></p>
+	<p><a href="postsadmin">Administrate Posts</a></p>
+	<p><a href="upload">Upload File</a></p>
+	<p><a href="newpwd">New Password</a></p>
