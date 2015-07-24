@@ -5,11 +5,10 @@
 
 ## Why name *aspen*
 Aspen is a kind of pulpwood commonly used for paper making. Literally, *aspen* 
-is a pen, symbolically *aspen* is paper. With *aspen*, I will publish ideas and 
-views through *aspen*.
+means a pen, symbolically *aspen* is paper.
 
 ## Author
-[Â¬Íş (LU WEI)](http://lw1990.name)
+[å¢å¨ (LU WEI)](http://lw1990.name)
 
 ## Features
 *aspen* contains two major parts. One is for reader, aspen.py. The  other is for
@@ -62,7 +61,7 @@ site configure)
         </Directory>  
         </VirtualHost>
     ```
-2.  Change owner of files requiring write access to apache¡¯s www-data
+2.  Change owner of files requiring write access to apacheÂ¡Â¯s www-data
 
   `sudo chown -R www-data *files or Dir requiring write access*`
 3.  Try to run, restart apache2, and see http://example.com
