@@ -12,7 +12,7 @@ means a pen, symbolically *aspen* is paper.
 
 ## Features
 *aspen* contains two major parts. One is for reader, aspen.py. The  other is for
-the system owner, admin.py. 
+the system owner, admin.py. Posts are writen in Markdown with simple meta data. When you add your post, you will find it is easy to follow.
 
 For owner:
 
