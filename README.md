@@ -1,6 +1,6 @@
 # aspen
 
-**aspen** is a personal web content management system based 
+**aspen** is a personal web content management system based on
 [webpy](http://webpy.org), see example: [http://lw1990.name](http://lw1990.name)
 
 ## Why name *aspen*
@@ -61,7 +61,7 @@ site configure)
         </Directory>  
         </VirtualHost>
     ```
-2.  Change owner of files requiring write access to apache¡¯s www-data
+2.  Change owner of files requiring write access to apache‘s www-data
 
   `sudo chown -R www-data *files or Dir requiring write access*`
 3.  Try to run, restart apache2, and see http://example.com
