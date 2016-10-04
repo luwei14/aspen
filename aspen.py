@@ -37,10 +37,14 @@ mapping = (
 	"/category/([1-9]\d*)", "category",
 	"", "reindex",
 	"/", "index",
+	'/favicon.ico','icon',
 )
 
 # get user information for the app
 #user = models.getUserInfo()
+class icon:
+	def GET(self):
+		raise web.seeother("/static/favicon.ico")
 
 class reindex:
 	def GET(self): raise web.seeother('/')

@@ -12,15 +12,15 @@ $var title: $user['realname'].upper()
 		<header>
 	        <h1>Latest Post Entries</h1>
         </header>
-	
+
 		$if len(recentPosts) > 0:
 			$for post in recentPosts:
 				<ol>
 					<li>
-						$post['update_time']<br/>
-						<a href="/post/$post['title_id']">$post['title']</a> 
+						$post['create_time']<br/>
+						<a href="/post/$post['title_id']">$post['title']</a>
 					</li>
-				</ol> 
+				</ol>
 		$else:
 			<p>There is no post yet.</p>
 	<p>
@@ -29,4 +29,3 @@ $var title: $user['realname'].upper()
         </a>
     <p>
 	</section>
-	

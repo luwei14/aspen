@@ -1,6 +1,6 @@
 *.pyc
 *~
 TODO.MD
-sessions/*.*
-static/upload/*.*
-data/sitet.db
+sessions/*
+static/upload/*
+data/site1.db

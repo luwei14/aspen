@@ -6,7 +6,7 @@ $var title: Post Archives of $user.upper()
     </h1>
 	<section class=entries>
       <header>
-        
+
       </header>
 
 	<h2>Categories:</h2>
@@ -20,14 +20,15 @@ $var title: Post Archives of $user.upper()
 	<h1>All Post Entries</h1>-->
 	<!--
 	<i>Some posts may be taged as private.</i>-->
+	<h2>Posts List:</h2>
 	$if len(allPosts) > 0:
 		$for post in allPosts:
 			<ol>
 			<li>
-			$post['update_time']<br/>
-			<a href="/post/$post['title_id']">$post['title']</a> 
+			$post['create_time']<br/>
+			<a href="/post/$post['title_id']">$post['title']</a>
 			</li>
-			</ol> 
+			</ol>
 	$else:
 		<p>There is no post yet.</p>
 	</section>

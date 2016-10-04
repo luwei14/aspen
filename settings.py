@@ -11,7 +11,7 @@ DEBUG = True
 
 # database
 DBTYPE = 'sqlite'
-DATAPATH = app_path+"/data/site.db"
+DATAPATH = app_path+"/data/site1.db"
 
 TBL_USER = "tbl_user"
 TBL_POST = "tbl_post"
